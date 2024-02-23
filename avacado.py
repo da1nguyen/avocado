@@ -3,9 +3,16 @@ import streamlit as st
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+
+# Set Streamlit options for better display
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 # Data Set
 df = pd.read_csv("avocado_full.csv")
+
 # Defining Count Graph/Plot
 fig = plt.figure(figsize=(10, 5))
-sns.countplot(x = "year", data = df)
-st.pyplot(fig)
+sns.countplot(x="year", data=df)
+
+# Display the plot using st.pyplot
+st.pyplot()
